@@ -1,0 +1,134 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #d1b884;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: transparent;
+    padding: 100px 0;
+    text-align: center;
+    font-family: Arial, serif;
+    font-size:4vw; 
+    color: black;
+}
+
+.container {
+    margin-top: 10vh;
+    padding: 4vw;
+    border-radius: 10px;
+    text-align: center;
+    width: 60vw;
+}
+
+.time {
+    font-family: Arial, sans-serif;
+    font-size: 18vw;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 0px;
+}
+
+.unit {
+    font-family: Arial, sans-serif;
+    font-size: 6vw;
+    color: #333;
+    margin: 0;
+}
+
+.radio-input {
+    display: flex;
+/* Stack items vertically */
+    align-items: center; /* Center-align everything */
+}
+
+.glass {
+    z-index: 2;
+    height: 150px; 
+    width: 30px; /* Slightly wider for better alignment */
+    margin-bottom: 0px;
+    margin-right: 5px;
+    padding: 3px;
+    background-color: rgba(117, 97, 111, 0.5);
+    border-radius: 15px;
+    box-shadow: rgba(50, 50, 93, 0.2) 0px 10px 20px -5px,
+        rgba(0, 0, 0, 0.25) 0px 5px 10px -5px,
+        rgba(10, 37, 64, 0.26) 0px -1px 8px 0px inset;
+    backdrop-filter: blur(4px);
+}
+
+.glass-inner {
+    width: 80%;
+    height: 96%;
+    border-color:rgba(117, 97, 111, 0.5);
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 12px;
+}
+
+.selector {
+    display: flex;
+    flex-direction: column;
+}
+
+.choice {
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.choice > div {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    z-index: 0;
+}
+
+.choice-circle {
+    appearance: none;
+    height: 100%;
+    margin: 0px;
+    width: 100%;
+    border-radius: 100%;
+    border-width: 3px;
+    border-style: solid;
+    border-color:rgba(117, 97, 111, 0.5);
+    cursor: pointer;
+    box-shadow: 0px 0px 5px -4px #d368c1, 0px 0px 5px -5px #d368c1 inset;
+}
+
+.ball {
+    z-index: 1;
+    position: absolute;
+    inset: 0px;
+    transform: translateX(-30px);
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -3px 3px 0px inset,
+        rgba(0, 0, 0, 0.15) 0px -5px 5px 0px inset,
+        rgba(0, 0, 0, 0.1) 0px -10px 5px 0px inset, rgba(0, 0, 0, 0.06) 0px 0.5px 0.2px,
+        rgba(0, 0, 0, 0.09) 0px 1px 0.5px, rgba(0, 0, 0, 0.09) 0px 2px 1px,
+        rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+        0px -1px 4px -3px rgba(0, 0, 0, 0.09);
+    border-radius: 100%;
+    transition: transform 400ms cubic-bezier(1, -0.4, 0, 1.4);
+    background-color: rgb(61, 50, 60);
+}
+
+.choice-circle:checked + .ball {
+    transform: translateX(0px);
+}
+
+.choice-name {
+    color: rgb(49, 49, 49);
+    font-size: 14px;
+    font-weight: 600;
+    font-family: monospace;
+    cursor: pointer;
+}
